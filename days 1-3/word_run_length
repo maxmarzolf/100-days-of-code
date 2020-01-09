@@ -1,0 +1,9 @@
+import time
+import psutil as psutil
+from time import mktime
+from datetime import datetime
+
+for process in psutil.process_iter():
+    if process.name() == 'Microsoft Word':
+        start_time = datetime.fromtimestamp(mktime(time.localtime(process.create_time())))
+        print(datetime.now() - start_time)
