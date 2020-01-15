@@ -5,6 +5,11 @@ from collections import deque
 
 
 CarModel = namedtuple('Owners', 'ID, FirstName, LastName, Make, Model')
+s = [('yellow', 1), ('blue', 2), ('yellow', 3), ('blue', 4), ('red', 1)]
+d = defaultdict(list)
+for k, v in s:
+    d[k].append(v)
+sorted(d.items())
 
 for owner in map(CarModel._make, csv.reader(open('/Users/max/PycharmProjects/100-days-of-code/days 4-6/mock_data.csv', 'rt'))):
     print(owner.FirstName, owner.Make, owner.Model)
@@ -16,6 +21,7 @@ def search(lines, pattern, history=5):
         if pattern in line:
             yield lines, previous_lines
         previous_lines.append(line)
+
 
 if __name__=='__main__':
     with open('somefile.txt') as f:
