@@ -33,13 +33,11 @@ def get_all_matching_models(cars=cars, grep='Trail'):
             if grep in item:
                 car_list.append(item)
     car_list.sort()
-    print(car_list)
 
 
 def sort_car_models(cars=cars):
     """return a copy of the cars dict with the car models (values)
        sorted alphabetically"""
-    pass
+    return sorted(cars.values())
 
 
-get_all_matching_models(cars)
