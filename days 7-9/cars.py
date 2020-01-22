@@ -17,6 +17,9 @@ def get_all_jeeps(cars=cars):
 
 def get_first_model_each_manufacturer(cars=cars):
     """return a list of matching models (original ordering)"""
+    car_list = []
+    for key, value in cars.items():
+        car_list.append(value[0])
     pass
 
 
@@ -24,6 +27,7 @@ def get_all_matching_models(cars=cars, grep='trail'):
     """return a list of all models containing the case insensitive
        'grep' string which defaults to 'trail' for this exercise,
        sort the resulting sequence alphabetically"""
+
     pass
 
 
@@ -32,4 +36,4 @@ def sort_car_models(cars=cars):
        sorted alphabetically"""
     pass
 
-get_all_jeeps(cars)
+get_first_model_each_manufacturer(cars)
