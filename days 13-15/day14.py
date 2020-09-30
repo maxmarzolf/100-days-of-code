@@ -28,6 +28,7 @@ def players_choice():
 
 
 def determine_winner(opponent, player):
+    print('computer chose ' + opponent)
     if opponent == 'rock' and player == 'scissors':
         print('you loose - rock smashes scissors')
     if opponent == 'paper' and player == 'rock':
