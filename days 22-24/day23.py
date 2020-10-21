@@ -1,10 +1,16 @@
+from functools import wraps
+
+
 def make_html(element):
-    def wrapper():
-        return '<p>' + element() + '<p>'
-    return wrapper
+    def real_decorator(func):
+        @wraps(func)
+        def wrapper(*args, **kwargs):
+            return f'<{element}>{func(*args, **kwargs)}</{element}>'
+        return wrapper
+    return real_decorator
 
 
-@make_html
+@make_html('p')
 def get_text(text='I code with PyBites'):
     return text
 
